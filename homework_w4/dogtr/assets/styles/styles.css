@@ -1,0 +1,147 @@
+#companyname,
+nav,
+#description-name,
+#description,
+#button-download,
+#second-button {
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+#main-block {
+    background-color: #106D35;
+    width: 1600px;
+    height: 50px;
+}
+
+#header-background {
+    background-color: #ffffff;
+}
+
+#logo {
+    margin: 0px 0px 0px 200px;
+}
+
+#companyname {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 50px 0px 0px 0px;
+}
+
+nav {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 10px 10px 10px 800px;
+}
+
+a:link {
+    color: black;
+    /* Цвет ссылок */
+}
+
+a:visited {
+    color: navy;
+    /* Цвет посещенных ссылок */
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0);
+    color: black;
+    box-shadow: inset 0 0 0 3px #064e25;
+}
+
+#body {
+    background-color: #2c9757;
+    width: 1650px;
+    height: 1335px
+}
+
+#first-button {
+    background-color: #106D35;
+    width: 100px;
+    border-radius: 8px;
+}
+
+#description-name {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 120%;
+    padding: 150px 200px 20px 200px;
+    color: #ffffff;
+}
+
+#description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 140%;
+    padding: 10px 200px;
+    color: #ffffff;
+}
+
+#dog1,
+#dog2 {
+    margin: 20px 20px 20px 200px;
+}
+
+#dog3 {
+    margin: 20px 20px 20px 70px;
+}
+
+#button-download {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding: 20px 70px 20px 70px;
+    margin: 20px 200px 20px 200px;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px 4px #106D35;
+}
+
+#second-button {
+    background: #106D35;
+    border-radius: 16px;
+    margin: 76px 500px 72px 240px;
+    padding: 32px 300px 59px 40px;
+
+    color: #ffffff;
+}
+
+.second-button1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.second-button2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#second-button3 {
+    width: 130px;
+    height: 47px;
+    margin: 0px 50px 30px 700px;
+    padding: 14px 23px;
+    border-radius: 8px;
+}
+
+#last-block {
+    background-color: #106D35;
+    width: 1600px;
+    height: 50px;

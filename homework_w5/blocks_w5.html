@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+    <link rel="stylesheet" href="/ITGirls/homework_w5/normalize.css">
+    <style>
+        .body {
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+            /*почему-то не работает это свойство. Если убрать высоту элемента main, то сайт не растягивается на весь экран*/
+        }
+
+        .header {
+            background-color: gray;
+            display: flex;
+            padding: 35px 0px;
+            justify-content: space-around;
+        }
+
+        .main_aside {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .main {
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            width: 65vw;
+            height: 62vh;
+            justify-content: end;
+            flex-wrap: wrap;
+        }
+
+        .article1_2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .first_article {
+            display: flex;
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+
+        .second_article {
+            display: flex;
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        .article3 {
+            background-color: blanchedalmond;
+            padding: 20px;
+            margin: 10px 0px;
+        }
+
+        .aside {
+            background-color: rgb(182, 226, 196);
+            display: flex;
+            justify-content: center;
+            padding: 20px 70px;
+            width: 35vw;
+        }
+
+        .footer {
+            background-color: gray;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-element {
+            background-color: white;
+            padding: 20px 70px;
+            margin: 15px 12px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <header>
+        <div class="header">[Шапка страницы]</div>
+    </header>
+
+    <div class="main_aside">
+        <main class="main">
+            <div class="article1_2">
+                <div class="first_article">[Ещё 1]</div>
+                <div class="second_article">[Ещё 2]</div>
+            </div>
+            <div class="article3">[Ещё3]</div>
+        </main>
+        <aside class="aside">
+            [Боковая часть]
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p class="footer-element">[Секция футера 1]</p>
+            <p class="footer-element">[Секция футера 2]</p>
+            <p class="footer-element">[Секция футера 3]</p>
+            <p class="footer-element">[Секция футера 4]</p>
+        </div>
+    </footer>
+</body>
+
+</html>
