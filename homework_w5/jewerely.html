@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Украшения</title>
+    <style>
+        .body {
+            background-image: url(/bgc.png);
+            background-size: cover;
+            height: 100vh;
+            align-items: stretch;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 216px;
+            height: 52px;
+            margin-top: 15px;
+        }
+
+        .diamond1 {
+            position: relative;
+            bottom: 42px;
+            left: 16px;
+        }
+
+        .diamond2 {
+            position: relative;
+            bottom: 68px;
+            left: 181px;
+        }
+
+        .left_menu {
+            display: flex;
+            width: 40vw;
+            justify-content: space-around;
+        }
+
+        .search {
+            display: flex;
+            width: 18px;
+            height: 18px;
+            margin-top: 30px;
+        }
+
+        .right_menu {
+            display: flex;
+            width: 40vw;
+            justify-content: space-around;
+        }
+
+        .account {
+            display: flex;
+            width: 16px;
+            height: 16px;
+            margin-top: 30px;
+        }
+
+        .heart {
+            display: flex;
+            width: 16px;
+            height: 14px;
+            margin-top: 30px;
+        }
+
+        .menu_item {
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 15px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 55vh;
+            justify-content: flex-end;
+            padding-bottom: 20px;
+        }
+
+        .h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 36px;
+            color: white;
+        }
+
+        .button {
+            width: 260px;
+            height: 50px;
+            background-color: rgba(59, 59, 59, 0.855);
+            border: 1px solid white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: white;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            align-self: flex-start;
+            border-top: 1px solid white;
+        }
+
+        .footer_item {
+            width: 160px;
+            height: 60px;
+            margin: 10px;
+            border-right: 1px solid white;
+        }
+
+        .footer_item6 {
+            width: 160px;
+            height: 60px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <header>
+        <nav class="nav">
+            <div class="left_menu">
+                <p class="menu_item">Контрагентам</p>
+                <p class="menu_item">Дизайнерам</p>
+                <p class="menu_item">Вакансии</p>
+            </div>
+            <div>
+                <img class="logo" src="/logo.png" alt="logo">
+                <div><img class="diamond1" src="/diamond.png" alt="diamond"></div>
+                <div><img class="diamond2" src="/diamond.png" alt="diamond"></div>
+
+            </div>
+            <div class="right_menu">
+                <img class="search" src="/search.png" alt="search">
+                <p class="menu_item">Поиск</p>
+                <p class="menu_item">Вход/Регистрация</p>
+                <img class="account" src="/account.png" alt="account">
+                <img class="heart" src="/heart.png" alt="heart">
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2 class="h2">Долго, дорого, богато!</h2>
+        <button class="button">КАТАЛОГ ИЗДЕЛИЙ</button>
+    </main>
+
+    <footer class="footer">
+        <img class="footer_item" src="/footer_item.png" alt="footer_item">
+        <img class="footer_item" src="/footer_item.png" alt="footer_item">
+        <img class="footer_item" src="/footer_item.png" alt="footer_item">
+        <img class="footer_item" src="/footer_item.png" alt="footer_item">
+        <img class="footer_item" src="/footer_item.png" alt="footer_item">
+        <img class="footer_item6" src="/footer_item.png" alt="footer_item">
+    </footer>
+</body>
+
+</html>
