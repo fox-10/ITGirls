@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ITGirls/homework_w5/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        .grid {
+            background-image: url(/ITGirls/homework_w6/neuro-image.png);
+            background-size: cover;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 60px 1fr 47px 27px;
+            grid-template-areas:
+                "hd hd"
+                "mn mn"
+                "ft ft"
+                "fl fl";
+        }
+
+        .header {
+            grid-area: hd;
+            display: grid;
+            background-color: rgba(255, 255, 255, 0.424);
+            grid-template-columns: 1.2fr 1.2fr 6fr 1fr 0.8fr 0.6fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "sp ab nr sb si bs";
+            border: 1px solid black;
+        }
+
+
+        .shop,
+        .about,
+        .subscription,
+        .sign_in {
+            font-size: 12px;
+            line-height: 14px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .shop {
+            grid-area: sp;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .about {
+            grid-area: ab;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .neuro {
+            grid-area: nr;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .subscription {
+            grid-area: sb;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .sign_in {
+            grid-area: si;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .basket {
+            grid-area: bs;
+            width: 20px;
+            height: 25px;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .main {
+            grid-area: mn;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1.5fr 0.6fr 1fr;
+            grid-template-areas:
+                "sl"
+                "ds"
+                "sb";
+        }
+
+        .slogan {
+            grid-area: sl;
+            align-self: flex-end;
+            padding-left: 70px;
+            padding-bottom: 20px;
+            font-size: 55px;
+            line-height: 60px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: white;
+        }
+
+        .description {
+            grid-area: ds;
+            font-size: 20px;
+            line-height: 30px;
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            padding-left: 70px;
+        }
+
+        .shop_button {
+            grid-area: sb;
+            width: 270px;
+            margin-left: 70px;
+            margin-top: 20px;
+            background-color: black;
+            border: 2px solid black;
+            border-radius: 2px;
+            color: white;
+            padding: 15px 70px;
+            font-size: 14px;
+            line-height: 15px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+
+        .footer {
+            grid-area: ft;
+            display: grid;
+            grid-template-columns: 70% 1fr 1fr;
+            grid-template-rows: 1fr;
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            align-self: stretch;
+            padding: 0px 30px;
+        }
+
+        .cotit_button {
+            margin: 10px;
+        }
+
+        .floor {
+            grid-area: fl;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header">
+            <div class="shop">SHOP</div>
+            <div class="about">ABOUT</div>
+            <div class="neuro">
+                <img src="/ITGirls/homework_w6/N.png" alt="N">
+                <img src="/ITGirls/homework_w6/e.png" alt="e">
+                <img src="/ITGirls/homework_w6/u.png" alt="u">
+                <img src="/ITGirls/homework_w6/r.png" alt="r">
+                <img src="/ITGirls/homework_w6/o.png" alt="o">
+            </div>
+            <div class="subscription">SUBSCRIPTION</div>
+            <div class="sign_in">SIGN IN</div>
+            <div class="basket">
+                <img src="/ITGirls/homework_w6/Vector.png" alt="basket">
+            </div>
+        </div>
+        <div class="main">
+            <div class="slogan">Health in <br> your pocket</div>
+            <div class="description">Functional gum and mints to <br> energize, calm and focus you <br> in the moment.
+            </div>
+            <div>
+                <button class="shop_button">SHOP</button>
+            </div>
+        </div>
+        <div class="footer">
+            <p>We use cookies to enhance your experience on our website. By using our website, you agree to
+                our privacy policy.
+            </p>
+            <p>Learn more</p>
+            <button class="cotit_button">GOT IT</button>
+        </div>
+        <div class="floor"></div>
+    </div>
+</body>
+
+</html>
