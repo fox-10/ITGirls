@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ITGirls/homework_w5/normalize.css">
+    <style>
+        .header {
+            grid-area: hd;
+            background-color: #e1e1e1;
+        }
+
+        .main1 {
+            grid-area: mn1;
+        }
+
+        .item1 {
+            grid-area: i1;
+            background-color: #feebba;
+        }
+
+        .item2 {
+            grid-area: i2;
+            background-color: #feebba;
+        }
+
+        .item3 {
+            grid-area: i3;
+            background-color: #feebba;
+        }
+
+        .sidebar {
+            grid-area: sb;
+            background-color: #deedcc;
+        }
+
+
+
+        .f_item1 {
+            grid-area: fi1;
+            background-color: white;
+        }
+
+        .f_item2 {
+            grid-area: fi2;
+            background-color: white;
+        }
+
+        .f_item3 {
+            grid-area: fi3;
+            background-color: white;
+        }
+
+        .f_item4 {
+            grid-area: fi4;
+            background-color: white;
+        }
+
+        @media screen and (min-width: 600px) {
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr 4fr 1.5fr;
+                grid-template-areas:
+                    "hd hd hd"
+                    "mn mn sb"
+                    "ft ft ft";
+                height: 100vh;
+            }
+
+            .main {
+                grid-area: mn;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 2fr 1fr 1fr;
+                grid-template-areas:
+                    "mn1 mn1"
+                    "i1 i2"
+                    "i3 i3";
+
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #fff8e4;
+            }
+
+            .footer {
+                grid-area: ft;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: "fi1 fi2 fi3 fi4";
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #e1e1e1;
+            }
+
+        }
+
+
+        @media screen and (min-width: 400px) and (max-width: 599px) {
+            .grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 1fr 4fr 1fr 1fr;
+                grid-template-areas:
+                    "hd hd"
+                    "mn sb"
+                    "ft ft"
+                    "ft ft";
+                height: 100vh;
+            }
+
+            .main {
+                grid-area: mn;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "mn1"
+                    "i1"
+                    "i2"
+                    "i3";
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #fff8e4;
+            }
+
+            .footer {
+                grid-area: ft;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas:
+                    "fi1 fi2"
+                    "fi3 fi4";
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #e1e1e1;
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 4fr 2fr 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "hd"
+                    "mn"
+                    "sb"
+                    "ft"
+                    "ft"
+                    "ft"
+                    "ft";
+                height: 100vh;
+            }
+
+            .main {
+                grid-area: mn;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "mn1"
+                    "i1"
+                    "i2"
+                    "i3";
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #fff8e4;
+            }
+
+            .footer {
+                grid-area: ft;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "fi1"
+                    "fi2"
+                    "fi3"
+                    "fi4";
+                gap: 1rem;
+                padding: 1rem;
+                background-color: #e1e1e1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header">header</div>
+        <div class="main">
+            <div class="main1">main1</div>
+            <div class="item1">item1</div>
+            <div class="item2">item2</div>
+            <div class="item3">item3</div>
+        </div>
+        <div class="sidebar">sidebar</div>
+        <div class="footer">
+            <div class="f_item1">f_item</div>
+            <div class="f_item2">f_item</div>
+            <div class="f_item3">f_item</div>
+            <div class="f_item4">f_item</div>
+        </div>
+    </div>
+</body>
+
+</html>

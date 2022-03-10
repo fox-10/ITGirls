@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ITGirls/homework_w5/normalize.css">
+    <style>
+        .header {
+            background-color: aquamarine;
+            grid-area: header;
+        }
+
+        .sidebar {
+            background-color: aqua;
+            grid-area: sidebar;
+        }
+
+        .main {
+            background-color: bisque;
+            grid-area: main;
+        }
+
+        @media screen and (min-width: 600px) {
+            .footer {
+                background-color: pink;
+                grid-area: footer;
+            }
+
+            .container {
+                display: grid;
+                height: 87vh;
+                width: 100vw;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 25% 1fr 25%;
+                grid-template-areas:
+                    "header header header header"
+                    "sidebar main main main"
+                    "footer footer footer footer";
+            }
+        }
+
+        @media screen and (min-width: 400px) and (max-width: 599px) {
+            .footer {
+                display: none;
+            }
+
+            .container {
+                display: grid;
+                height: 87vh;
+                width: 100vw;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 25% 1fr;
+                grid-template-areas:
+                    "header header header header"
+                    "sidebar main main main";
+            }
+        }
+
+        @media screen and (max-width: 399px) {
+            .footer {
+                display: none;
+            }
+
+            .header {
+                height: 30vh;
+            }
+
+            .sidebar {
+                height: 30vh;
+            }
+
+            .main {
+                height: 30vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Адаптивность</h1>
+    <div class="container">
+        <header class="header">header</header>
+        <aside class="sidebar">sidebar</aside>
+        <main class="main">main</main>
+        <footer class="footer">footer</footer>
+    </div>
+</body>
+
+</html>

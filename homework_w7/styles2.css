@@ -1,0 +1,251 @@
+.shop,
+.about,
+.subscription,
+.sign_in {
+    font-size: 12px;
+    line-height: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.shop {
+    grid-area: sp;
+    align-self: center;
+    justify-self: center;
+}
+
+.about {
+    grid-area: ab;
+    align-self: center;
+    justify-self: center;
+}
+
+.neuro {
+    grid-area: nr;
+    align-self: center;
+    justify-self: center;
+}
+
+.subscription {
+    grid-area: sb;
+    align-self: center;
+    justify-self: center;
+}
+
+.sign_in {
+    grid-area: si;
+    align-self: center;
+    justify-self: center;
+}
+
+.basket {
+    grid-area: bs;
+    width: 20px;
+    height: 25px;
+    align-self: center;
+    justify-self: center;
+}
+
+.main {
+    grid-area: mn;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 0.6fr 1fr;
+    grid-template-areas:
+        "sl"
+        "ds"
+        "sb";
+}
+
+.slogan {
+    grid-area: sl;
+    align-self: flex-end;
+    padding-left: 70px;
+    padding-bottom: 20px;
+    font-size: 55px;
+    line-height: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.description {
+    grid-area: ds;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding-left: 70px;
+}
+
+.shop_button {
+    grid-area: sb;
+    width: 270px;
+    margin-left: 70px;
+    margin-top: 20px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 2px;
+    color: white;
+    padding: 15px 70px;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.footer {
+    grid-area: ft;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    align-self: stretch;
+    padding: 0px 30px;
+    justify-content: space-around;
+}
+
+.gotit_button {
+    width: 120px;
+    height: 30px;
+    margin: 10px;
+}
+
+.floor {
+    grid-area: fl;
+    background-color: rgba(255, 255, 255, 0.424);
+}
+
+@media (orientation: landscape) {
+    .grid {
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .main {
+        background: url(/ITGirls/homework_w6/neuro-image.png);
+        background-size: cover;
+    }
+}
+
+@media (orientation: portrait) {
+    .grid {
+        background: url(/ITGirls/homework_w6/neuro-image-portr.png);
+        background-size: cover;
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 65px 27px;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft"
+            "fl";
+    }
+
+    .header {
+        grid-area: hd;
+        display: grid;
+        background-color: rgba(255, 255, 255, 0.424);
+        grid-template-columns: 1.2fr 1.2fr 6fr 1fr 0.8fr 0.6fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "sp ab nr sb si bs";
+    }
+
+    .main {
+        grid-area: mn;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 0.6fr 1fr;
+        grid-template-areas:
+            "sl"
+            "ds"
+            "sb";
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 699px) {
+    .grid {
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 120px 27px;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft"
+            "fl";
+    }
+
+    .header {
+        grid-area: hd;
+        display: grid;
+        background-color: rgba(255, 255, 255, 0.424);
+        grid-template-columns: 1.2fr 1.2fr 3fr 1fr 0.8fr 0.6fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "sp ab nr sb si bs";
+    }
+
+    .main {
+        grid-area: mn;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 0.6fr 1fr;
+        grid-template-areas:
+            "sl"
+            "ds"
+            "sb";
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .grid {
+        background-size: cover;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 360px 1fr 235x 27px;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft"
+            "fl";
+    }
+
+    .header {
+        grid-area: hd;
+        display: grid;
+        background-color: rgba(255, 255, 255, 0.424);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "nr"
+            "sp"
+            "ab"
+            "sb"
+            "si"
+            "bs";
+        padding: 20px;
+    }
+
+    .main {
+        grid-area: mn;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 0.6fr 1fr;
+        grid-template-areas:
+            "sl"
+            "ds"
+            "sb";
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            background-color: aqua;
+            grid-area: header;
+        }
+
+        .sidebar {
+            background-color: yellow;
+            grid-area: sidebar;
+        }
+
+        .main {
+            background-color: greenyellow;
+            grid-area: main;
+        }
+
+        .footer {
+            background-color: orange;
+            grid-area: footer;
+        }
+
+        .container {
+            display: grid;
+            width: 100vw;
+            height: 90vh;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 15% 1fr 15%;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        .nav-item {
+            padding: 5px;
+            font-size: 2em;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+            width: 95%;
+        }
+
+        .pict {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .pictContainer {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Гриды</h1>
+    <div class="container">
+        <header class="header">header
+            <nav class="menu">
+                <span class="nav-item">menu1</span>
+                <span class="nav-item">menu2</span>
+                <span class="nav-item">menu3</span>
+            </nav>
+        </header>
+        <aside class="sidebar">sidebar</aside>
+        <main class="main">content
+            <div class="pictContainer"><img class="pict" src="/ITGirls/homework_w7/cat.jpg" alt="cat"></div>
+        </main>
+        <footer class="footer">footer</footer>
+    </div>
+
+</body>
+
+</html>
