@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Untitled</title>
+    <meta charset="utf-8">
+    <style>
+        .alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h3>Моя страница</h3>
+    <script>
+        function newyr() {
+            var now = new Date();
+            return now.getFullYear();
+        }
+
+        var div = document.createElement('div');
+        div.className = "alert alert-success";
+        div.innerHTML = "<strong>Ура!</strong> " + newyr() + " год!";
+
+        document.body.appendChild(div);
+    </script>
+</body>
+
+
+</html>

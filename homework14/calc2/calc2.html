@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>КАЛЬКУЛЯТОР</h1>
+    <div style="display: flex; flex-direction:row;flex-wrap:wrap;gap: 10px;">
+        <div style="border: 2px solid wheat; text-align: center;width: 200px;padding: 20px;">
+            <h2>сложение</h2>
+            Введите первое число<input type="text" id="sum1"><br><br>
+            Введите второе число<input type="text" id="sum2"><br><br>
+            <button onclick="s()">сумма равна:<div id="sum"></div></button>
+        </div>
+
+        <div style="border: 2px solid wheat; text-align: center;width: 200px;padding: 20px;">
+            <h2>вычитание</h2>
+            Введите первое число<input type="text" id="sub1"><br><br>
+            Введите второе число<input type="text" id="sub2"><br><br>
+            <button onclick="c()">разность равна:<div id="sub"></div></button>
+        </div>
+
+        <div style="border: 2px solid wheat; text-align: center;width: 200px;padding: 20px;">
+            <h2>деление</h2>
+            Введите первое число<input type="text" id="div1"><br><br>
+            Введите второе число<input type="text" id="div2"><br><br>
+            <button onclick="d()">результат деления:<div id="div"></div></button>
+        </div>
+
+        <div style="border: 2px solid wheat; text-align: center;width: 200px;padding: 20px;">
+            <h2>умножение</h2>
+            Введите первое число<input type="text" id="mul1"><br><br>
+            Введите второе число<input type="text" id="mul2"><br><br>
+            <button onclick="m()">результат умножения:<div id="mul"></div></button>
+        </div>
+    </div>
+</body>
+<script src="calc2.js"></script>
+
+</html>
