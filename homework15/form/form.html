@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            box-shadow: 0 40px 40px 40px rgba(211, 211, 211, 0.272);
+            padding: 50px;
+        }
+
+        .title {
+            font-size: 1.5em;
+        }
+
+        .input {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            font-size: 1em;
+        }
+
+        .input-fields {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+
+        .title-img {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+            padding-top: 30px;
+        }
+
+        .subtitle {
+            color: darkslategray;
+        }
+
+        .button {
+            background-color: rgb(136, 224, 220);
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        .button:hover {
+            background-color: rgb(80, 212, 205);
+            transition: 0.2s ease;
+        }
+
+        .push {
+            font-size: 0.8em;
+            color: gray;
+        }
+
+        .check {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #errorMessage {
+            color: red;
+        }
+
+        #congrat {
+            font-size: 1.5em;
+            color: rgb(110, 6, 128);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="font-size: 0.8em; color:gray; text-align: end;margin-right: 15px;">Уже есть аккаунт на Finder? <a
+            href="#">Войти</a></p>
+    <div class="form">
+        <div class="title-img">
+            <h1 style="text-align: center;">FINDER</h1><img src="img/logo.png" alt="logo" id="img" width="400px">
+            <p class="subtitle" style="text-align: center; width:400px">Ищите,
+                пишите письма,
+                сохраняйте и делитесь файлами,
+                выбирайте товары,
+                слушайте музыку и прокладывайте маршруты с одним аккаунтом на всех устройствах и платформах.</p>
+            <p style="font-size: 0.8em; color:gray; align-self: start; margin-top: 170px;">ⓒ Finder
+                2022</p>
+        </div>
+        <div class="form-input">
+            <div class="title" style="text-align: center;">Регистрация</div>
+            <div class="input-fields"><br><br>
+                <input type="text" class="input" placeholder="Имя" id="name"><br><br>
+                <input type="text" class="input" placeholder="Фамилия" id="lastName"><br><br>
+                <input type="text" class="input" placeholder="Придумайте логин" id="login"><br><br>
+                <input type="text" class="input" placeholder="Придумайте пароль" id="password"><br><br>
+                <input type="text" class="input" placeholder="Повторите пароль" id="password2"><br><br>
+                <input type="text" class="input" placeholder="Номер мобильного телефона" id="phone"><br><br>
+                <div id="errorMessage"></div>
+                <div id="congrat"></div>
+                <button class="button" id="button" onclick="check();">Зарегистрироваться</button>
+                <p class="push">Нажимая на кнопку "Зарегистрироваться":</p>
+                <div class="check">
+                    <input type="checkbox" value="" class="checkbox" id="checkbox1">
+                    <div>Я принимаю условия Пользовательского соглашения
+                        и даю своё согласие Finder на обработку моей
+                        персональной информации на условиях, определенных Политикой конфиденциальности.</div>
+                </div><br>
+                <div class="check">
+                    <input type="checkbox" value="" class="checkbox">
+                    <div>Я не хочу получать рекламу и другие предложения
+                        данного сервиса Finder</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function check() {
+            let name = document.getElementById("name");
+
+            let lastName = document.getElementById("lastName");
+            let login = document.getElementById("login");
+            let password = document.getElementById("password");
+            let password2 = document.getElementById("password2");
+            let phone = document.getElementById("phone");
+            let checkbox1 = document.getElementById("checkbox1");
+            let congrat = document.getElementById("congrat");
+
+            document.getElementById("errorMessage").innerHTML = "";
+            document.getElementById("congrat").innerHTML = "";
+
+            if (name.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Ваше имя не указано<br>";
+            }
+            if (lastName.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Ваша фамилия не указана<br>";
+            }
+            if (login.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Ваш логин не указан<br>";
+            }
+            if (password.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Ваш пароль не заполнен<br>";
+            }
+            if (password2.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Повторите пароль<br>";
+            }
+            if (phone.value == '') {
+                document.getElementById("errorMessage").innerHTML += "Номер телефона не указан<br>";
+            }
+            if (password.value.length <= 5) {
+                document.getElementById("errorMessage").innerHTML += "Ваш пароль должен содержать более 5 символов<br>";
+            }
+            if (password.value != password2.value) {
+                document.getElementById("errorMessage").innerHTML += "Пароли не совпадают<br>";
+            }
+            if (phone.value.length != 11) {
+                document.getElementById("errorMessage").innerHTML += "Номер телефона должен содержать 11 цифр<br>";
+            }
+            if (!checkbox1.checked) {
+                document.getElementById("errorMessage").innerHTML += "Вы не приняли пользовательское соглашение<br>";
+            }
+            if (name.value != '' && lastName.value != '' && login.value != '' && password.value != '' && password2
+                .value != '' &&
+                phone.value != '' && password.value.length > 5 && password.value == password2.value && phone.value
+                .length == 11 && checkbox1.checked) {
+                document.getElementById("congrat").innerHTML += `Добро пожаловать, ${name.value}!<br><br>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
