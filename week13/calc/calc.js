@@ -4,7 +4,7 @@ function summ(){
     let c=Number(a)+Number(b);
     alert(`Сумма равна ${c}`);
 };
-
+alert(`Сумма равна ${c}`);
 function subtr(){
     let a=prompt('Введите УМЕНЬШАЕМОЕ');
     let b=prompt('Введите ВЫЧИТАЕМОЕ');

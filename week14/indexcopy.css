@@ -1,0 +1,94 @@
+body{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+}
+
+
+div {
+    border: 1px solid red;
+}
+
+/*шапка*/
+.header{
+    display: flex;
+    flex-direction: column;
+	background-color:#e9e9e9;
+	padding-bottom:200px;
+}
+
+.header-content{
+	display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo{
+    justify-self: flex-start;
+	margin-left:10vw;
+	margin-top:40px;
+	background-color:#e9e9e9;
+}
+
+.navigation{
+	display:flex;
+    flex-wrap: wrap;
+	/*margin-left:400px;*/
+}
+
+.nav-items{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:500;
+	font-size:12px;
+	text-transform:uppercase;
+	padding:30px;
+}
+
+.nav-items a{
+	text-decoration:none;
+	color:black;
+}
+
+.nav-items :hover{
+	color:#1ecbc6;
+}
+
+.block-description{
+    align-self: end;
+   /* max-width: 80vw;*/
+
+	/*margin-left:768px;
+	margin-top:182px;*/
+}
+
+.title-website{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:500;
+	font-size:38px;
+	margin-bottom:45px;
+}
+
+.description-website{
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight:400px;
+	font-size:18px;
+	color:#8a8a8a;
+	margin-bottom:40px;
+}
+
+.bin-contact{
+	color:#fff;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight:400px;
+	font-size:12px;
+	text-transform:uppercase;
+	padding:25px 50px;
+	text-decoration:none;
+	color:#fff;
+	background-color:#10c9c3;
+}
+
+.bin-contact:hover{
+	color:#10c9c3;
+	background-color:#fff;
+}

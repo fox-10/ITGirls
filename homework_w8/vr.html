@@ -6,30 +6,166 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
-        div {
+        /* div {
             border: 1px solid red;
         }
+*/
+        body {
+            border: 1px solid greenyellow;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            align-content: stretch;
+        }
 
-        .vr-pic {
-            position: relative;
-            margin-left: 45vw;
-            height: 90vh;
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 4% 4% 1% 4%;
+        }
+
+        .header__logo-img {
+            width: 150px;
+        }
+
+        .header__basket-img {
+            width: 115px;
+        }
+
+
+
+
+
+        .title {
+            font-family: 'Roboto', sans-serif;
+            padding-left: 2.5%;
+
+        }
+
+
+
+
+
+
+        .container1 {
+            display: grid;
+            grid-template-columns: repeat(3, 28vw);
+            grid-template-rows: auto 1fr;
+            margin: 30px auto 40px auto;
+            gap: 1rem;
+
+        }
+
+        .container1__nowire {
+            max-width: 28vw;
+        }
+
+        .container1__nocomp {
+            max-width: 28vw;
+        }
+
+        .container1__tenh {
+            max-width: 280vw;
+        }
+
+        .img {
+            max-width: 28vw;
+        }
+
+        .container1__mail {
+            background-color: #EC615B;
+        }
+
+
+
+
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            flex-wrap: wrap;
+            padding: 4%;
+            gap: 2rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            color: #5222D0;
+
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <div></div>
-    </header>
-    <main>
-        <div>
-            <img class="vr-pic" src="/ITGirls/homework_w8/vr-pic.png" alt="">
+    <div class="header">
+        <div class="header__logo">
+            <img src="logo.png" alt="logo" class="header__logo-img">
         </div>
-    </main>
-    <footer></footer>
-
+        <div class="header__basket">
+            <img src="button-cart.png" alt="basket" class="header__basket-img">
+        </div>
+    </div>
+    <div class="title">
+        <h1>ВОЗМОЖНОСТИ</h1>
+    </div>
+    <div class="container1">
+        <div class="container1__nowire">
+            <div class="container1__nowire__img">
+                <img src="ill1.png" alt="img1" class="img">
+            </div>
+            <div class="container1__nowire__title2">Без проводов</div>
+            <div class="container1__nowire__text">
+                Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы
+                расставить трекеры.
+            </div>
+        </div>
+        <div class="container1__nocomp">
+            <div class="container1__nocomp__img">
+                <img src="ill2.png" alt="img1" class="img">
+            </div>
+            <div class="container1__nocomp__title2">Без проводов</div>
+            <div class="container1__nocomp__text">
+                Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы
+                расставить трекеры.
+            </div>
+        </div>
+        <div class="container1__tenh">
+            <div class="container1__tenh__img">
+                <img src="ill3.png" alt="img1" class="img">
+            </div>
+            <div class="container1__tenh__title2">Без проводов</div>
+            <div class="container1__tenh__text">
+                Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы
+                расставить трекеры.
+            </div>
+        </div>
+        <div class="container1__games">
+            <div class="container1__nocomp__title2">Без проводов</div>
+            <div class="container1__nocomp__text">
+                Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы
+                расставить трекеры.
+            </div>
+        </div>
+        <div class="container1__free">
+            <div class="container1__nocomp__title2">Без проводов</div>
+            <div class="container1__nocomp__text">
+                Шлем работает без проводов. Не нужен ни компьютер, ни внешнее питание, ни большое помещение, чтобы
+                расставить трекеры.
+            </div>
+        </div>
+        <div class="container1__mail"></div>
+    </div>
+    <div class="footer">
+        <div class="footer__can">Возможности</div>
+        <div class="footer__buy">Где купить</div>
+        <div class="footer__delivery">Доставка</div>
+        <div class="footer__help">Помощь</div>
+    </div>
 </body>
 
 </html>

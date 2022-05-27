@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .galery-button {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .galery {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        #img1 {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            display: none;
+        }
+
+        #img2 {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+
+        #img3 {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="galery-button">
+        <button onclick="left();">влево</button>
+        <div class="galery">
+            <div id="img1">
+                <img src="https://mirpozitiva.ru/wp-content/uploads/2019/11/1472042492_01-1024x640.jpg" alt=""
+                    width="400px">
+            </div>
+
+            <div id="img2">
+                <img src="https://mirpozitiva.ru/wp-content/uploads/2019/11/1472042585_06-1024x640.jpg" alt=""
+                    width="400px">
+            </div>
+
+            <div id="img3">
+                <img src="https://mirpozitiva.ru/wp-content/uploads/2019/11/1472042938_27-1024x576.jpg" alt=""
+                    width="400px">
+            </div>
+        </div>
+        <button onclick="right();">вправо</button>
+    </div>
+
+    <script src="galery3.js"></script>
+</body>
+
+</html>

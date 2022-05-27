@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Породы</h1>
+
+    <select name="breed" id="breed" onchange="show()">
+        <option disabled selected="selected">Выберите породу</option>
+        <option value="1">Персидская</option>
+        <option value="2">Тонкинская</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select><br><br>
+
+    <div id="result">
+        <img src="" id="catImage" width="300px">
+    </div>
+
+
+
+
+    <!-- <input type="text" id="test"
+        onkeyup="document.getElementById('result').innerText=document.getElementById('test').value"
+        onmouseover="colorMe();" onmouseout="colorMeBack()">
+
+    <button onclick="check();">Нажми меня</button>
+
+    <div id="result"></div>-->
+
+    <script>
+        if (true) {
+            alert('Привет');
+        }
+        button.onclick = hello();
+
+        function show() {
+
+            switch (document.getElementById("breed").value) {
+                case "1":
+                    document.getElementById("catImage").src =
+                        "https://www.purinaone.ru/cat/sites/default/files/2021-01/%D0%BF%D0%B5%D1%80%D1%81%D0%B8%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%88%D0%BA%D0%B0_1_0.jpg";
+                    break
+
+                case "2":
+                    document.getElementById("catImage").src =
+                        "https://www.purina.ru/sites/default/files/styles/nppe_breed_selector_500/public/2020-05/cat_tonkinese.jpg?itok=Qw8bBf1B";
+                    break
+            }
+
+
+            /* if (document.getElementById("breed").value == "1")
+                 document.getElementById("catImage").src =
+                 "https://www.purinaone.ru/cat/sites/default/files/2021-01/%D0%BF%D0%B5%D1%80%D1%81%D0%B8%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%88%D0%BA%D0%B0_1_0.jpg";
+
+             if (document.getElementById("breed").value == "2")
+                 document.getElementById("catImage").src =
+                 "https://www.purina.ru/sites/default/files/styles/nppe_breed_selector_500/public/2020-05/cat_tonkinese.jpg?itok=Qw8bBf1B";*/
+
+        }
+        /*
+                    function check() {
+                        let result = document.getElementById("test").value;
+                        if (result == '') {
+                            alert('Ваше поле не заполнено');
+                        }
+                    }
+
+                    function colorMe() {
+                        document.getElementById('test').style.backgroundColor = "lightgreen";
+                    }
+
+                    function colorMeBack() {
+                        document.getElementById('test').style.backgroundColor = "white";
+                    }*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inputFio {
+            width: 400px;
+            height: 35px;
+            border: none;
+        }
+
+        #background {
+            background: wheat;
+            width: 500px;
+            padding: 30px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .name {
+            background: white;
+            width: 400px;
+            height: 25px;
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background">
+        <p>Введите ФИО:</p>
+        <input type="text" id="inputFio"><br><br><br>
+        <input type="submit" onclick="outputFio();">
+        <p>Ваша фамилия:</p>
+        <div class="name" id="lastName"></div>
+        <p>Ваше имя:</p>
+        <div class="name" id="name"></div>
+        <p>Ваше отчество:</p>
+        <div class="name" id="patronymic"></div>
+    </div>
+    <script>
+        let inputFio = document.getElementById("inputFio").value;
+
+        let inputArray = inputFio.split(" ");
+
+        let inputLastName = inputArray[0];
+
+        let inputName = inputArray[1];
+
+        let inputPatronymic = inputArray[2];
+
+        function outputFio() {
+            let outputLastName = inputLastName[0].toUpperCase() + (inputLastName.slice(1)).toLowerCase();
+            document.getElementById("lastName").innerHTML += outputLastName.value;
+        }
+    </script>
+</body>
+
+</html>
