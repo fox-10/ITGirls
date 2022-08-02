@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            font-size: 1.3em;
+        }
+
+        fieldset {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>Закажите красивый букет</h1>
+        <fieldset>
+            <legend>Выберите сорт цветов и количество</legend>
+            <select name="flowers">
+                <option value="0">Розы</option>
+                <option value="1">Ирисы</option>
+                <option value="2">Тюльпаны</option>
+            </select>
+            <select name="amount">
+                <option value="0">3</option>
+                <option value="1">7</option>
+                <option value="2">15</option>
+                <option value="3">35</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Доставка</legend>
+            <label>
+                <input type="radio" name="delivery">Самовывоз
+            </label>
+            <label>
+                <input type="radio" name="delivery">Доставка
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Купон на скидку 20%</legend>
+            <label>
+                <input type="text" name="coupon">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Оформить заказ</legend>
+            <button>Посчитать</button>
+            <div class="result" style="color: rgb(217, 16, 117);"></div>
+        </fieldset>
+    </form>
+
+    <script src="flowers.js"></script>
+</body>
+
+</html>
