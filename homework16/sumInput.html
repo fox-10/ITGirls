@@ -20,7 +20,7 @@
         const input = document.querySelector("input");
         const button = document.querySelector("button");
 
-        let numbers = [1, 2, 3];
+        let numbers = [];
         let sortedNumbers = [];
 
         button.addEventListener("click", sumArr);
@@ -35,7 +35,7 @@
             numbers.push(number);
             input.value = "";
             printArray();
-            //document.querySelector(".array").textContent = numbers;
+
         }
 
         function printArray() {
@@ -47,26 +47,24 @@
                 } else {
                     sum += number + ", ";
                 }
-                document.querySelector(".array").textContent = sum;
+                document.querySelector(".array").textContent = `введенные цифры: ${sum}`;
             }
-            /*for (let number of numbers) {
-                document.querySelector(".array").textContent += number + ", ";
-            }*/
         }
+
 
         function sumArr() {
             let summa = 0;
             for (let number of numbers) {
                 summa += number;
             }
-            document.querySelector(".sum").textContent = summa;
+            document.querySelector(".sum").textContent = `Сумма цифр: ${summa}`;
 
             sortedNumbers = [...numbers];
 
             sortedNumbers.sort(function (a, b) {
                 return a - b;
             });
-            document.querySelector(".sorted").textContent = sortedNumbers;
+            document.querySelector(".sorted").textContent = `отсортировано по возрастанию ${sortedNumbers}`;
         }
 
 
