@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Введите число" />
+    <button>готово</button>
+    <div class="output">
+        <p class="array"></p>
+        <p class="sum"></p>
+        <p class="sorted"></p>
+    </div>
+    <script>
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+
+        let numbers = [1, 2, 3];
+        let sortedNumbers = [];
+
+        button.addEventListener("click", sumArr);
+
+        function addInput() {
+            let number = Number(input.value);
+            if (Number.isNaN(number)) {
+                alert("не число")
+                return
+            }
+
+            numbers.push(number);
+            input.value = "";
+            printArray();
+            //document.querySelector(".array").textContent = numbers;
+        }
+
+        function printArray() {
+            sum = "";
+            for (i = 0; i < numbers.length; i++) {
+                let number = numbers[i];
+                if (i === numbers.length - 1) {
+                    sum += number + ". ";
+                } else {
+                    sum += number + ", ";
+                }
+                document.querySelector(".array").textContent = sum;
+            }
+            /*for (let number of numbers) {
+                document.querySelector(".array").textContent += number + ", ";
+            }*/
+        }
+
+        function sumArr() {
+            let summa = 0;
+            for (let number of numbers) {
+                summa += number;
+            }
+            document.querySelector(".sum").textContent = summa;
+
+            sortedNumbers = [...numbers];
+
+            sortedNumbers.sort(function (a, b) {
+                return a - b;
+            });
+            document.querySelector(".sorted").textContent = sortedNumbers;
+        }
+
+
+        input.addEventListener("change", addInput);
+    </script>
+</body>
+
+</html>
