@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +33,7 @@
     </style>
 </head>
 
+
 <body>
     <div id="background">
         <p>Введите ФИО:</p>
@@ -45,21 +47,31 @@
         <div class="name" id="patronymic"></div>
     </div>
     <script>
-        let inputFio = document.getElementById("inputFio").value;
-
-        let inputArray = inputFio.split(" ");
-
-        let inputLastName = inputArray[0];
-
-        let inputName = inputArray[1];
-
-        let inputPatronymic = inputArray[2];
-
         function outputFio() {
+            let inputFio = document.getElementById("inputFio").value;
+            let inputFioNoSpaceBetween = inputFio.replace(/\s+/g, ' ');
+            let inputFioNoSpace = inputFioNoSpaceBetween.trim();
+            let inputArray = inputFioNoSpace.split(" ");
+
+            console.log(inputArray);
+
+            //получение отдельно фамилии, имени и отчества: 
+
+            let inputLastName = inputArray[0];
+            let inputName = inputArray[1];
+            let inputPatronymic = inputArray[2];
+
+            //вывод фио:
+
             let outputLastName = inputLastName[0].toUpperCase() + (inputLastName.slice(1)).toLowerCase();
-            document.getElementById("lastName").innerHTML += outputLastName.value;
+            document.getElementById("lastName").innerHTML = outputLastName;
+            let outputName = inputName[0].toUpperCase() + (inputName.slice(1)).toLowerCase();
+            document.getElementById("name").innerHTML = outputName;
+            let outputPatronymic = inputPatronymic[0].toUpperCase() + (inputPatronymic.slice(1)).toLowerCase();
+            document.getElementById("patronymic").innerHTML = outputPatronymic;
         }
     </script>
 </body>
+
 
 </html>
