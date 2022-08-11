@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="comment"></div>
+    <textarea name="" id="" cols="30" rows="5"></textarea>
+    <button>Отправить</button>
+
+
+    <script>
+        const button = document.querySelector("button");
+
+        const comments = document.querySelector("div");
+
+        const textarea = document.querySelector("textarea");
+
+        let array = [];
+
+
+        button.addEventListener("click", function () {
+            let text = textarea.value;
+            textarea.value = "";
+
+            //проверка
+
+            array.push(text);
+
+            comments.innerHTML = "";
+
+            render(comments, array)
+
+
+        });
+
+        function render(parentNode, data) {
+            for (let i = 0; i < data.length; i++) {
+                let item = data[i];
+
+                const words = ['viagra', 'XXX'];
+                let filteredText = item;
+                for (let word of words) {
+                    let reg = new RegExp(word, 'ig');
+
+                    filteredText = filteredText.replace(reg, "***");
+                }
+
+                let node = document.createElement("div");
+                node.classList.add("comment");
+                node.textContent = filteredText;
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "X"
+
+                deleteButton.addEventListener("click", () => {
+                    node.remove();
+                    data.splice(i, 1);
+                });
+
+                parentNode.append(node);
+                node.append(deleteButton);
+
+            }
+        }
+    </script>
+</body>
+
+</html>

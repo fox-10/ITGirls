@@ -23,7 +23,7 @@
             let arr = [];
 
             for (var i = 0; i < 10; i++) {
-                arr.push(Math.round((Math.random() - 0.5) * 20));
+                arr.push(Math.ceil((Math.random() - 0.5) * 20));
             }
             document.querySelector(".array").textContent = `10 случайных чисел: ${arr}`;
 
