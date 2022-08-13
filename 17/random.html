@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="submit" onclick="generateNumbers();">Сгенерировать 10 чисел</button>
+
+    <div class="array"></div>
+    <div class="min"></div>
+    <div class="max"></div>
+    <div class="average"></div>
+    <div class="sum"></div>
+    <div class="multi"></div>
+
+    <script>
+        function generateNumbers() {
+            let arr = [];
+
+            for (var i = 0; i < 10; i++) {
+                arr.push(Math.round((Math.random() - 0.5) * 20));
+            }
+            document.querySelector(".array").textContent = `10 случайных чисел: ${arr}`;
+
+
+            let min = Math.min(...arr);
+            document.querySelector(".min").textContent = `минимальное число: ${min}`;
+
+
+            let max = Math.max(...arr);
+            document.querySelector(".max").textContent = `максимальное число: ${max}`;
+
+
+
+            let result = arr.reduce(function (sum, elem) {
+                return sum + elem;
+            }, 0);
+            document.querySelector(".average").textContent = `среднее арифметическое: ${result/10}`;
+            document.querySelector(".sum").textContent = `сумма всех чисел: ${result}`;
+
+
+
+            let mult = arr.reduce(function (sum, elem) {
+                return sum * elem;
+            });
+            document.querySelector(".multi").textContent = `произведение всех чисел: ${mult}`;
+        }
+    </script>
+</body>
+
+</html>

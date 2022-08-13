@@ -22,14 +22,17 @@
             switch (document.getElementById("color").value) {
                 case "white":
                     document.getElementById("body").style.backgroundColor = "white";
+                    body.style.color = "black";
                     break
 
                 case "blue":
                     document.getElementById("body").style.backgroundColor = "lightblue";
+                    body.style.color = "black";
                     break
 
                 case "dark":
-                    document.getElementById("body").style.backgroundColor = "grey";
+                    document.getElementById("body").style.backgroundColor = "#333333";
+                    body.style.color = "white";
                     break
             }
         }

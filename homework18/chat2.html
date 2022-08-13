@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border: 2px solid rgb(101, 188, 225);
+            border-radius: 5px;
+            width: 100vw;
+            min-height: 96vh;
+        }
+
+        #chat {
+            overflow: hidden;
+            border: 2px solid rgb(71, 153, 211);
+            border-radius: 5px;
+            width: 95vw;
+            height: 35vh;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 20px;
+        }
+
+        #comment {
+            margin: 0px 50px 0px 50px;
+            width: 75vw;
+            outline: none;
+            border: 2px solid rgb(108, 108, 188);
+            border-radius: 5px;
+
+        }
+
+        #submit {
+            width: 70vw;
+            height: 40px;
+            margin: auto;
+            color: white;
+            background-color: coral;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .author {
+            color: rgb(107, 60, 142);
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        #author {
+            width: 20vw;
+            margin: 0px 50px 0px 50px;
+            outline: none;
+            border: 2px solid rgb(108, 108, 188);
+            border-radius: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 4em;
+            height: 4em;
+            background: silver;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #pct {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center;background-color: cornflowerblue;margin-top: 0px; margin-bottom: 10px; color: white; font-family: 'Roboto', sans-serif;
+            font-weight: bold;">
+            Chat
+        </h1>
+
+        <div id="chat"></div>
+
+        <p style="margin-left: 50px;">Ваше имя:</p>
+        <input type="text" id="author" value="">
+
+        <p style="margin-left: 50px;">Загрузите ваш аватар:</p>
+        <label for=pct style="margin-left: 50px;"></label>
+        <input type=file id=pct>
+
+        <p style="margin-left: 50px;">Ваше сообщение:</p>
+        <textarea name="" id="comment" cols="80" rows="3"></textarea>
+
+        <button id="submit" onclick="addMessage();">Отправить</button>
+    </div>
+
+    <script>
+        const MAX_MESSAGES_LENGTH = 7;
+        // чтобы сообщения появлялись друг под другом, нужно их сохранять в массив
+        const messages = [];
+
+        // ваш метод не только проверять спам. Основная его задача - это добавление нового сообщения
+        function addMessage() {
+            // обычно сверху происходит инициализация переменных, с которыми в дальнейшем предстоит работать.
+            // textarea у вас используется дважды в коде, поэтому нужно вынести в переменную, чтобы при изменении textarea не менять ее в друх местах
+            const inputElem = document.getElementById("comment");
+            const outputElem = document.getElementById("chat");
+            const author = document.getElementById("author");
+
+
+            // получение сообщения из textarea
+            let inputPhrase = inputElem.value;
+            let authorName = author.value;
+            let authorAndComment = `<span class="author">${authorName}: </span><span>${inputPhrase}`
+
+
+            // Если сообщение пустое, то ничего не делаем
+            if (!inputPhrase.length) {
+                return;
+            }
+
+            // добавление нового сообщения в массив
+            messages.push(authorAndComment);
+
+            // проверка на спам
+            const output = messages.map(message => message.replace(/XXX/gi, "***").replace(/viagra/gi, "***"));
+
+            // вставка сообщений. Обратите внимание, как используются обратные кавычки вместе с output.join().
+            // в констукцию ${} можно засунуть как в массив - все что угодно, но объекты будут отображаться как Object [object]
+            // тут еще есть логика показа последних 6 сообщений. Обычно она пишется не так топорно, но для понимания, что делает каждый метод подходит
+            outputElem.innerHTML = `
+            <div>
+                ${output.reverse().slice(0, MAX_MESSAGES_LENGTH - 1).join('</div><br><div>')}
+            </div>`;
+
+            if (localStorage.getItem('name') == null) {
+                localStorage.setItem('name', authorName)
+            }
+
+            // обнуление textarea
+            inputElem.value = "";
+            //author.value = "";
+        }
+    </script>
+</body>
+
+</html>

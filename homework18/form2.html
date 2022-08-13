@@ -93,7 +93,8 @@
             href="#">Войти</a></p>
     <div class="form">
         <div class="title-img">
-            <h1 style="text-align: center;">FINDER</h1><img src="img/logo.png" alt="logo" id="img" width="400px">
+            <h1 style="text-align: center;">FINDER</h1>
+            <img src="img/logo.png" alt="logo" id="img" width="400">
             <p class="subtitle" style="text-align: center; width:400px">Ищите,
                 пишите письма,
                 сохраняйте и делитесь файлами,
@@ -107,13 +108,13 @@
             <div class="input-fields"><br><br>
                 <input type="text" class="input" placeholder="Имя" id="name"><br><br>
                 <input type="text" class="input" placeholder="Фамилия" id="lastName"><br><br>
-                <input type="text" class="input" placeholder="Придумайте логин" id="login"><br><br>
+                <input type="text" class="input" placeholder="Придумайте логин" id="login" required><br><br>
                 <input type="text" class="input" placeholder="Придумайте пароль" id="password"><br><br>
                 <input type="text" class="input" placeholder="Повторите пароль" id="password2"><br><br>
                 <input type="text" class="input" placeholder="Номер мобильного телефона" id="phone"><br><br>
                 <div id="errorMessage"></div>
                 <div id="congrat"></div>
-                <button class="button" id="button" onclick="check()">Зарегистрироваться</button>
+                <button class="button" id="button" onclick="check();">Зарегистрироваться</button>
                 <p class="push">Нажимая на кнопку "Зарегистрироваться":</p>
                 <div class="check">
                     <input type="checkbox" value="" class="checkbox" id="checkbox1">
@@ -131,56 +132,93 @@
     </div>
 
     <script>
+        let errors = [];
+
+        function validName() {
+            let nameField = document.getElementById("name");
+            let nameFormat = /^[А-ЯЁ|A-Z][а-яё|a-z]*$/;
+            console.log(nameField.value);
+            if (nameField.value.match(nameFormat)) {
+                return true;
+            } else {
+                errors.push("Имя должно начинаться с большой буквы");
+            }
+        }
+
+        function validLastName() {
+            let lastNameField = document.getElementById("lastName");
+            let nameFormat = /^[А-ЯЁ|A-Z][а-яё|a-z]*$/;
+            if (lastNameField.value.match(nameFormat)) {
+                return true;
+            } else {
+                errors.push("Фамилия должна начинаться с большой буквы");
+            }
+        }
+
+        function validLogin() {
+            let loginField = document.getElementById("login");
+            let loginFormat = /^[а-яё|a-z|0-9]+$/i;
+            if (loginField.value.match(loginFormat)) {
+                return true;
+            } else {
+                errors.push("Логин может содержать только буквы и цифры");
+            }
+        }
+
+        function validPassword() {
+            let passwordField = document.getElementById("password");
+            let passwordFormat = /^[а-яё|a-z|0-9]{6,}$/i;
+            if (passwordField.value.match(passwordFormat)) {
+                return true;
+            } else {
+                errors.push("Пароль должен содержать не менее 6 символов, включая буквы или цифры");
+            }
+        }
+
+        function validPassword2() {
+            let passwordField = document.getElementById("password");
+            let password2Field = document.getElementById("password2");
+            if (passwordField.value == password2Field.value) {
+                return true;
+            } else {
+                errors.push("Пароли должны совпадать");
+            }
+        }
+
+        function validPhone() {
+            let phoneField = document.getElementById("phone");
+            let phoneFormat = /^8[0-9]{10}$/;
+            if (phoneField.value.match(phoneFormat)) {
+                return true;
+            } else {
+                errors.push("Номер телефона должен содержать 11 цифр, первая цифра 8");
+            }
+        }
+
+        function validCheckbox() {
+            let checkboxField = document.getElementById("checkbox1");
+            if (checkboxField.checked) {
+                return true;
+            } else {
+                errors.push("Вы не приняли пользовательское соглашение");
+            }
+        }
+
         function check() {
-            let name = document.getElementById("name");
-            let lastName = document.getElementById("lastName");
-            let login = document.getElementById("login");
-            let password = document.getElementById("password");
-            let password2 = document.getElementById("password2");
-            let phone = document.getElementById("phone");
-            let checkbox1 = document.getElementById("checkbox1");
-            let congrat = document.getElementById("congrat");
+            let nameField = document.getElementById("name");
+            errors = [];
 
-            document.getElementById("errorMessage").innerHTML = "";
-            document.getElementById("congrat").innerHTML = "";
+            validName();
+            validLastName();
+            validLogin();
+            validPassword();
+            validPassword2();
+            validPhone();
+            validCheckbox();
 
-            if (name.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Ваше имя не указано<br>";
-            }
-            if (lastName.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Ваша фамилия не указана<br>";
-            }
-            if (login.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Ваш логин не указан<br>";
-            }
-            if (password.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Ваш пароль не заполнен<br>";
-            }
-            if (password2.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Повторите пароль<br>";
-            }
-            if (phone.value == '') {
-                document.getElementById("errorMessage").innerHTML += "Номер телефона не указан<br>";
-            }
-            if (password.value.length <= 5) {
-                document.getElementById("errorMessage").innerHTML +=
-                    "Ваш пароль должен содержать более 5 символов<br>";
-            }
-            if (password.value != password2.value) {
-                document.getElementById("errorMessage").innerHTML += "Пароли не сдовпаают<br>";
-            }
-            if (phone.value.length != 11) {
-                document.getElementById("errorMessage").innerHTML += "Номер телефона должен содержать 11 цифр<br>";
-            }
-            if (!checkbox1.checked) {
-                document.getElementById("errorMessage").innerHTML +=
-                    "Вы не приняли пользовательское соглашение<br>";
-            }
-            if (name.value != '' && lastName.value != '' && login.value != '' && password.value != '' && password2
-                .value != '' &&
-                phone.value != '' && password.value.length > 5 && password.value == password2.value && phone.value
-                .length == 11 && checkbox1.checked) {
-                document.getElementById("congrat").innerHTML += `Добро пожаловать, ${name.value}!<br><br>`;
+            document.getElementById("errorMessage").innerHTML = errors.join('<br>');
+            if (errors.length == 0) {
+                document.getElementById("congrat").innerHTML += `Добро пожаловать, ${nameField.value}!<br><br>`;
             }
         }
     </script>

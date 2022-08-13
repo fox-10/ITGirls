@@ -3,13 +3,23 @@ const comments = document.querySelector(".phrase");
 const textarea = document.querySelector("textarea");
 let array = [];
 
+//оставляем имя автора при перезагрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+    let name = localStorage.getItem("name");
+    if(name){
+
+    }
+})
+
 function checkSpam() {
     let text = textarea.value;
     textarea.value = "";
 
     //создаем массив из комментов
-    array.push(text);
-
+    if(text){
+        array.push(text);
+    }
+    
     //очищаем поле с ранее написанными комментами
     comments.innerHTML = "";
 
@@ -47,7 +57,8 @@ function render(parentNode, data) {
         parentNode.append(node);
         node.append(deleteButton);
     }
-}
+}    
+
 
 /*
 function checkSpam() {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="yourName()">Как тебя зовут?</button> <br>
+    а теперь калькулятор: <br>
+    <button onclick="firstNumber()">первое число</button> <br>
+    <button onclick="secondNumber()">второе число</button> <br>
+    <button onclick="summ()">+</button>
+    <button onclick="differ()">-</button>
+    <button onclick="mult()">*</button>
+    <button onclick="divis()">/</button>
+    <script>
+        function yourName() {
+            alert(`Привет, ${prompt('как тебя зовут?')} !`);
+        }
+
+
+
+        function firstNumber() {
+            prompt("Введите первое число");
+        };
+
+        function secondNumber() {
+            prompt("Введите второе число");
+        };
+
+
+        let z = x + y;
+
+        function summ() {
+
+            alert(`Сумма равна ${firstNumber() + secondNumber()}`);
+        }
+    </script>
+</body>
+
+</html>

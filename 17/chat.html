@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>Document</title>
+    <style>
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border: 2px solid rgb(101, 188, 225);
+            border-radius: 5px;
+            width: 100vw;
+            min-height: 85vh;
+        }
+
+        #chat {
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid rgb(71, 153, 211);
+            border-radius: 5px;
+            width: 85vw;
+            min-height: 35vh;
+            margin: 20px auto 20px auto;
+            padding: 15px;
+
+        }
+
+        .phrase {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 30px;
+            width: 80vw;
+
+            padding: 5px;
+        }
+
+        #textarea {
+            width: 85vw;
+            margin: 20px auto 20px auto;
+            outline: none;
+            border: 2px solid rgb(108, 108, 188);
+            border-radius: 5px;
+            padding: 25px;
+
+        }
+
+        #submit {
+            width: 70vw;
+            height: 40px;
+            margin: auto;
+            color: white;
+            background-color: coral;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .comment {
+            border-bottom: 1px solid gray;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center;background-color: cornflowerblue;margin-top: 0px; margin-bottom: 10px; color: white; font-family: 'Roboto', sans-serif;
+            font-weight: bold;">
+            Chat
+        </h1>
+        <div id="chat">
+            <div class="phrase" id="phrase1"></div>
+        </div>
+        <textarea name="" id="textarea" cols="80" rows="3"></textarea>
+        <button id="submit" onclick="checkSpam();">Отправить</button>
+    </div>
+
+    <script>
+        const button = document.querySelector("button");
+        const comments = document.querySelector(".phrase");
+        const textarea = document.querySelector("textarea");
+        let array = [];
+
+        function checkSpam() {
+            let text = textarea.value;
+            textarea.value = "";
+
+            //создаем массив из комментов
+            array.push(text);
+
+            //очищаем поле с ранее написанными комментами
+            comments.innerHTML = "";
+
+            //заново создаем поле  с комментами, включая новый коммент
+            render(comments, array)
+        };
+
+
+        function render(parentNode, data) {
+            for (let i = 0; i < data.length; i++) {
+                let item = data[i];
+
+                //проверяем текст и заменяем запрещенные слова на  ***
+                const words = ['viagra', 'XXX'];
+                let filteredText = item;
+                for (let word of words) {
+                    let reg = new RegExp(word, 'ig');
+
+                    filteredText = filteredText.replace(reg, "***");
+                }
+
+                //создаем див с комментом и кнопкой "удалить" в поле комментариев
+                let node = document.createElement("div");
+                node.classList.add("comment");
+                node.textContent = filteredText;
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "X"
+
+                deleteButton.addEventListener("click", () => {
+                    node.remove();
+                    data.splice(i, 1);
+                });
+
+                parentNode.append(node);
+                node.append(deleteButton);
+            }
+        }
+
+        /*
+        function checkSpam() {
+            let inputPhrase = (document.getElementById("textarea")).value;
+
+            let outputPhrase = inputPhrase.replace(/XXX/gi, "***").replace(/viagra/gi, "***");
+            document.getElementById("phrase1").innerHTML += outputPhrase + "<br><br>";
+            document.getElementById("textarea").value = "";
+
+        }
+        */
+    </script>
+</body>
+
+</html>

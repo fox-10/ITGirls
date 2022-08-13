@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+    <link rel="shortcut icon"
+        href="https://cdn-icons.flaticon.com/png/512/2171/premium/2171991.png?token=exp=1643480608~hmac=8caec0278592635346ad87ac80fbb126"
+        type="image/svg" />
+    <style>
+        input:required:valid {
+            border-color: green;
+        }
+    </style>
+</head>
+​
+
+<body>
+    <h1>Расскажите про своего питомца</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCJJMLD6W3s-jW3nxJTYBMJ7t7RoUlH1YQTw&usqp=CAU"
+        alt="" id="catImage">
+    <form>
+        <div>
+            <label for="nickname">Кличка вашего питомца</label>
+            <input type="text" id="nickname" pattern="[А-Я][а-я]{1,}"
+                title="Первая буква должна быть заглавной, шрифт - кириллица" required>
+        </div>
+        <fieldset>
+            <legend>Ваши данные</legend>
+            <div>
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label for="phone">Телефон</label>
+                <input type="number" id="phone" required>
+            </div>
+        </fieldset>
+        <label for="breed">Выберите породу вашего питомца</label>
+        <select id="breed">
+            <option id="breed1">Абиссинская</option>
+            <option id="breed2">Британская короткошерстная</option>
+            <option id="breed3">Мейн-кун</option>
+            <option id="breed4">Сибирская</option>
+            <option id="breed5">Ориентал</option>
+        </select>
+        ​
+        <div>
+            <p>Чем питается ваш питомец (можно выбрать несколько пунктов)</p>
+            <label><input type="checkbox" name="food" value="dry">Сухой корм</label><br>
+            <label><input type="checkbox" name="food" value="wet">Влажный корм</label><br>
+            <label><input type="checkbox" name="food" value="natural">Натуральный корм</label><br>
+        </div>
+        <div>
+            <p>Укажите пол вашего питомца</p>
+            <label><input type="radio" name="sex" id="female" />Женский</label><br>
+            <label><input type="radio" name="sex" id="male" />Мужской</label><br>
+        </div>
+        <div>
+            <label for="comment">Ваши комментарии:</label><br>
+            <textarea name="comment" id="comment" cols="30" rows="10" required></textarea>
+        </div>
+        <div>
+            <label for="photo">Укажите ваш email:</label><br>
+            <input type="email" id="email" required>
+        </div>
+        <p>Готово! Сохраните ваши ответы!</p>
+        <p>
+            <div><button>ОК</button></div>
+        </p>
+
+
+    </form>
+
+
+</body>
+
+</html>

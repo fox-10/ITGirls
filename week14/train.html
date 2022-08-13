@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <script>
+        alert("Из HEAD: " + document.body); // null, <body> ещё нет
+    </script>
+</head>
+
+<body>
+    <input type="button" id="elem" onclick="alert('Было')" value="Нажми меня">
+
+    <script>
+        let button = document.getElementById("elem");
+        button.onclick = function () { // перезапишет существующий обработчик
+            alert('Станет'); // выведется только это
+        };
+    </script>
+</body>
+
+</html>
