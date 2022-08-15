@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="chat3.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1 style="text-align: center;background-color: cornflowerblue;margin-top: 0px; margin-bottom: 10px; color: white; font-family: 'Roboto', sans-serif;
+            font-weight: bold;">
+            Chat
+        </h1>
+        <div id="chat">
+            <div class="phrase" id="phrase1"></div>
+        </div>
+        <p style="margin-left: 5vw;">Напишите свое имя:</p>
+        <input type="text" id="author" style="width: 20vw; margin-left: 5vw;">
+        <textarea name="" id="textarea" cols="80" rows="3"></textarea>
+        <button id="submit" onclick="checkSpam();">Отправить</button>
+    </div>
+
+    <script src="chat3.js"></script>
+</body>
+
+</html>
