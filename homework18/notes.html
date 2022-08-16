@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Мои заметки:</h1>
+        <textarea name="" id="" cols="30" rows="10"></textarea><br><br>
+        <button>Отправить мои заметки в хранилище</button><br><br>
+    </form>
+    <button onclick="showNotes()">Показать все мои заметки</button>
+    <div class="showNotes"></div>
+
+
+    <script>
+        let form = document.querySelector("form");
+
+
+
+        form.addEventListener("submit", () => {
+            let myNote = document.querySelector("textarea").value;
+            let array = [];
+            if (localStorage.getItem("note") == null) {
+                localStorage.setItem("note", myNote);
+            } else {
+                let previousNotes = localStorage.getItem("note");
+                let plusNotes = `${previousNotes}  <br>  ${myNote}`
+
+                localStorage.setItem("note", plusNotes)
+            }
+        })
+
+        function showNotes() {
+            document.querySelector(".showNotes").innerHTML = "";
+
+            document.querySelector(".showNotes").innerHTML = localStorage.getItem("note");
+        }
+    </script>
+</body>
+
+</html>
