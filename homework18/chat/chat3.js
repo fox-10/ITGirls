@@ -1,7 +1,8 @@
-const button = document.querySelector("button");
+const button = document.querySelector("#submit");
 const comments = document.querySelector(".phrase");
 const textarea = document.querySelector("textarea");
 const author = document.getElementById("author");
+
 let array = [];
 
 
@@ -17,9 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if(localComments){
-        comments.innerHTML = localComments;
+        for (let i = 0; i < localComments.length; i++) { 
+            array.push(localComments[i]); 
+        }
     }
-})
+
+    render(comments, array);
+});
+
+
+
 
 function checkSpam() {
     let text = textarea.value;
@@ -29,17 +37,22 @@ function checkSpam() {
     if(text){
         array.push(text);
     }
+
+    if(localStorage.getItem("name") == null) {
+        localStorage.setItem("name", author.value)
+    }
     
     //очищаем поле с ранее написанными комментами
     comments.innerHTML = "";
 
     //заново создаем поле  с комментами, включая новый коммент
-    render(comments, array)
+    localStorage.setItem('localComments', JSON.stringify(array));
+    render(comments, array);
+    
+}
 
-    if(JSON.parse(localStorage.getItem('localComments')) == null) {
-        localStorage.setItem('localComments', JSON.stringify(comments.innerHTML));
-    }
-};
+
+
 
 
 function render(parentNode, data) {
@@ -61,30 +74,18 @@ function render(parentNode, data) {
         node.textContent = filteredText;
 
         let deleteButton = document.createElement("button");
+        deleteButton.classList.add("deleteButton");
         deleteButton.textContent = "X"
 
         deleteButton.addEventListener("click", () => {
             node.remove();
             data.splice(i, 1);
+            localStorage.setItem('localComments', JSON.stringify(data));
         });
 
         parentNode.append(node);
         node.append(deleteButton);
     }
 
-    if(localStorage.getItem("name") == null) {
-        localStorage.setItem("name", author.value)
-    }
+    
 }    
-
-
-/*
-function checkSpam() {
-    let inputPhrase = (document.getElementById("textarea")).value;
-
-    let outputPhrase = inputPhrase.replace(/XXX/gi, "***").replace(/viagra/gi, "***");
-    document.getElementById("phrase1").innerHTML += outputPhrase + "<br><br>";
-    document.getElementById("textarea").value = "";
-
-}
-*/
