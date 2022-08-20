@@ -46,9 +46,9 @@ function checkSpam() {
     comments.innerHTML = "";
 
     //заново создаем поле  с комментами, включая новый коммент
-    localStorage.setItem('localComments', JSON.stringify(array));
+ 
     render(comments, array);
-    
+    localStorage.setItem('localComments', JSON.stringify(array));
 }
 
 
