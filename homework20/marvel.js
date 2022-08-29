@@ -40,7 +40,7 @@ let superHeroes = [{
 },
 {
     img: "https://n1s1.hsmedia.ru/52/a3/e1/52a3e14a0c8f02715b763e7a20fe1c00/547x397_0xac120002_19311926741540468872.jpg",
-    mame: "Тор",
+    name: "Тор",
     universe: "Marvel Comics",
     alterEgo: "нет; полное имя — Тор Одинсон",
     occupation: "борец за справедливость, скандинавский бог",
@@ -84,7 +84,33 @@ for (let heroe of superHeroes) {
 
 
 document.getElementById("container").innerHTML = heroesContent;
+
+let rates = document.querySelectorAll("input");
+if(localStorage.getItem("batmanRate")) {   
+    rates[0].value = localStorage.getItem("batmanRate");
+}
+
+if(localStorage.getItem("supermanRate")) {    
+    rates[1].value = localStorage.getItem("supermanRate");
+}
+
+if(localStorage.getItem("ironmanRate")) {    
+    rates[2].value = localStorage.getItem("ironmanRate");
+}
+
+if(localStorage.getItem("spidermanRate")) {    
+    rates[3].value = localStorage.getItem("spidermanRate");
+}
+
+if(localStorage.getItem("torRate")) {   
+    rates[4].value = localStorage.getItem("torRate");
+}
+
+if(localStorage.getItem("wonderwomanRate")) {
+    rates[5].value = localStorage.getItem("wonderwomanRate");
+}
 });
+
 
 let button = document.querySelector("button");
 
@@ -99,4 +125,5 @@ button.addEventListener("click", () => {
     localStorage.setItem("spidermanRate", rates[3].value);
     localStorage.setItem("torRate", rates[4].value);
     localStorage.setItem("wonderwomanRate", rates[5].value);
+
 })
