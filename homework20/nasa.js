@@ -8,10 +8,14 @@ async function loadData() {
     let imgNode = document.createElement('img');
     let textNode = document.createElement('p');
 
-    titleNode.textContent = data.title;
+    if(data == "")  {
+        textNode.textContent = "Сервер недоступен";
+    } else {
+        titleNode.textContent = data.title;
     imgNode.src = data.url;
-    imgNode.width = 600;    
+    imgNode.width = 1200;    
     textNode.textContent = data.explanation;
+    }
 
 
     document.body.append(resultNode);
@@ -19,4 +23,13 @@ async function loadData() {
     resultNode.append(imgNode);
     resultNode.append(textNode);
 }
+
+
 loadData();
+loadData().catch((e) => {if(e){
+    let resultNode = document.createElement('div');
+    let textNode = document.createElement('p');
+
+    document.body.append(resultNode);
+    resultNode.append(textNode);
+    textNode.textContent = `Ошибка! Тип ошибки: ${e}`;}});

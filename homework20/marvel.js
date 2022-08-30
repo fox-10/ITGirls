@@ -63,6 +63,8 @@ let superHeroes = [{
 
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
 let heroesContent = "";
