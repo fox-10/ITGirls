@@ -1,0 +1,77 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    box-shadow: 0 40px 40px 40px rgba(211, 211, 211, 0.272);
+    padding: 50px;
+}
+
+.title {
+    font-size: 1.5em;
+}
+
+.input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 1em;
+}
+
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.title-img {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    padding-top: 30px;
+}
+
+.subtitle {
+    color: darkslategray;
+}
+
+.button {
+    background-color: rgb(130, 241, 86);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: rgb(112, 244, 156);
+    transition: 0.2s ease;
+}
+
+.push {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.check {
+    display: flex;
+    flex-direction: row;
+}
+
+#errorMessage {
+    color: red;
+}
+
+#congrat {
+    font-size: 1.5em;
+    color: rgb(3, 192, 110);
+    text-align: center;
+}

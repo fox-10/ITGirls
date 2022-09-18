@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+    <link rel="stylesheet" href="form3.css">
+</head>
+
+<body>
+    <p style="font-size: 0.8em; color:gray; text-align: end;margin-right: 15px;">Уже есть аккаунт на Find? <a
+            href="#">Войти</a></p>
+    <div class="form">
+        <div class="title-img">
+            <h1 style="text-align: center; color: rgb(2, 157, 121);">FIND</h1>
+            <img src="img/logoza.ru.png" alt="logo" id="img" width="400">
+            <p class="subtitle" style="text-align: center; width:400px">Ищите,
+                пишите письма,
+                сохраняйте и делитесь файлами,
+                выбирайте товары,
+                слушайте музыку и прокладывайте маршруты с одним аккаунтом на всех устройствах и платформах.</p>
+            <p style="font-size: 0.8em; color:gray; align-self: start; margin-top: 170px;">ⓒ Find
+                2022</p>
+        </div>
+        <div class="form-input">
+            <div class="title" style="text-align: center;">Регистрация</div>
+            <form class="input-fields" id="form"><br><br>
+                <input type="text" class="input" placeholder="Имя" id="name"><br><br>
+                <input type="text" class="input" placeholder="Фамилия" id="lastName"><br><br>
+                <input type="text" class="input" placeholder="Придумайте логин" id="login" required><br><br>
+                <input type="password" class="input" placeholder="Придумайте пароль" id="password"><br><br>
+                <input type="password" class="input" placeholder="Повторите пароль" id="password2"><br><br>
+                <input type="text" class="input" placeholder="Номер мобильного телефона" id="phone"><br><br>
+                <div id="errorMessage"></div>
+                <div id="congrat"></div>
+                <button class="button" id="button" onclick="check();">Зарегистрироваться</button>
+                <p class="push">Нажимая на кнопку "Зарегистрироваться":</p>
+                <div class="check">
+                    <input type="checkbox" value="" class="checkbox" id="checkbox1">
+                    <div>Я принимаю условия Пользовательского соглашения
+                        и даю своё согласие Find на обработку моей
+                        персональной информации на условиях, определенных Политикой конфиденциальности.</div>
+                </div><br>
+                <div class="check">
+                    <input type="checkbox" value="" class="checkbox">
+                    <div>Я не хочу получать рекламу и другие предложения
+                        данного сервиса Find</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="form3.js"></script>
+</body>
+
+</html>
