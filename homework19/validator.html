@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        email<input type="text" name="email"><br>
+        date<input type="text" name="date"><br>
+        domain<input type="text" name="domain"><br>
+        phone<input type="text" name="phone"><br>
+    </form>
+
+    <script>
+        let email = document.getElementsByName("email").value;
+        let date = document.getElementsByName("date").value;
+        let domain = document.domain;
+        let phone = document.getElementsByName("phone").value;
+
+
+        class Validator {
+            static isEmail(email) {
+                if (email == "testmail@mail.ru") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            static isDomain(domain) {
+                if (domain == "127.0.0.1") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            static isDate(date) {
+                if (date == "testmail@mail.ru") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            static sPhone(phone) {
+                if (phone == "89997777777") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

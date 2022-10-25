@@ -55,9 +55,9 @@ function checkSpam() {
 
 
 
-function render(parentNode, data) {
-    for (let i = 0; i < data.length; i++) {
-        let item = data[i];
+function render(comments, array) {
+    for (let i = 0; i < array.length; i++) {
+        let item = array[i];
 
         //проверяем текст и заменяем запрещенные слова на  ***
         const words = ['viagra', 'XXX'];
@@ -70,8 +70,10 @@ function render(parentNode, data) {
 
         //создаем див с комментом и кнопкой "удалить" в поле комментариев
         let node = document.createElement("div");
+        let nameNode = document.createElement("p");
+        nameNode.textContent = localStorage.getItem("name");
         node.classList.add("comment");
-        node.textContent = filteredText;
+        node.textContent = `${nameNode.textContent} : ${filteredText}`;
 
         let deleteButton = document.createElement("button");
         deleteButton.classList.add("deleteButton");
@@ -79,11 +81,11 @@ function render(parentNode, data) {
 
         deleteButton.addEventListener("click", () => {
             node.remove();
-            data.splice(i, 1);
-            localStorage.setItem('localComments', JSON.stringify(data));
+            array.splice(i, 1);
+            localStorage.setItem('localComments', JSON.stringify(array));
         });
 
-        parentNode.append(node);
+        comments.append(node);
         node.append(deleteButton);
     }
 

@@ -5,7 +5,7 @@ function onSearch() {
     .then(response => response.json())
     .then(user => {
         document.getElementById("avatar").src = user.avatar_url
-        document.getElementById("userName").innerText = user.name;
+        document.getElementById("userName").innerText = user.login;
     })
     .catch(error => console.log(error));
 }

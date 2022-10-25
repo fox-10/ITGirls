@@ -21,18 +21,16 @@
     <script>
         let form = document.querySelector("form");
 
-
-
         form.addEventListener("submit", () => {
             let myNote = document.querySelector("textarea").value;
-            let array = [];
+
             if (localStorage.getItem("note") == null) {
                 localStorage.setItem("note", myNote);
             } else {
                 let previousNotes = localStorage.getItem("note");
-                let plusNotes = `${previousNotes}  <br>  ${myNote}`
+                let plusNotes = `${previousNotes}  <br> <br>  ${myNote}`;
 
-                localStorage.setItem("note", plusNotes)
+                localStorage.setItem("note", plusNotes);
             }
         })
 

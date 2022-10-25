@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+margin: 0px;
+}
+
+
+@media (max-width:700px ) {
+  .allHeroes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width:701px ) {
+  .allHeroes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+h1 {
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  color: white;
+}
+body {
+  background-color: #282c34;
+
+}
