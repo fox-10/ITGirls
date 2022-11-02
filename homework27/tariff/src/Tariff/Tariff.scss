@@ -1,0 +1,93 @@
+$blue_color: #28c2d6;
+$green_color: #1faf8e;
+$red_color: #f46a5f;
+$black_color: #303742;
+$grey_color: #ebebeb;
+
+.card {
+    width: 200px;
+    height: 350px;
+    margin: 70px 1.5px auto 1.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.name,
+.price,
+.speed,
+.text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rubInMonth {
+    font-size: 1.5rem;
+}
+
+.name {
+    height: 70px;   
+    margin-bottom: 1.5px;
+    color: #ebebeb;
+    font-size: 1.2em;
+}
+
+.price {
+    height: 138.5px;
+    color: #ebebeb;
+    font-size: 3em;
+}
+
+.speed {
+    height: 70px;
+    background-color: lighten($grey_color, 5%);
+    color: #8d9095;
+    font-size: 0.85em;
+}
+
+.text {
+    background-color: $grey_color;
+    height: 70px;
+    font-size: 0.9em;
+    line-height: 2em;
+    text-align: center;
+    color: #8d9095;
+    margin: 0;
+}
+
+
+
+.name_blue {
+    background-color:darken($blue_color, 10%);
+}
+.price_blue {
+    background-color: $blue_color;
+}
+
+
+.name_green {
+    background-color:darken($green_color, 10%);
+}
+.price_green {
+    background-color: $green_color;
+}
+
+
+.name_red {
+    background-color:darken($red_color, 10%);
+}
+.price_red {
+    background-color: $red_color;
+}
+
+
+.name_black {
+    background-color:darken($black_color, 10%);
+}
+.price_black {
+    background-color: $black_color;
+}
+
+
+
