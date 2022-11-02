@@ -12,6 +12,14 @@ $grey_color: #ebebeb;
     flex-direction: column;
 }
 
+.bigCard {
+    width: 200px;
+    height: 380px;
+    margin: 60px 1.5px auto 1.5px;
+    display: flex;
+    flex-direction: column;
+}
+
 .name,
 .price,
 .speed,
@@ -27,20 +35,21 @@ $grey_color: #ebebeb;
 }
 
 .name {
-    height: 70px;   
+    height: 20%;   
     margin-bottom: 1.5px;
     color: #ebebeb;
     font-size: 1.2em;
 }
 
 .price {
-    height: 138.5px;
+    height: 40%;
     color: #ebebeb;
     font-size: 3em;
+    font-weight: 500;
 }
 
 .speed {
-    height: 70px;
+    height: 20%;
     background-color: lighten($grey_color, 5%);
     color: #8d9095;
     font-size: 0.85em;
@@ -48,7 +57,7 @@ $grey_color: #ebebeb;
 
 .text {
     background-color: $grey_color;
-    height: 70px;
+    height:20%;
     font-size: 0.9em;
     line-height: 2em;
     text-align: center;

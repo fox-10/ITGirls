@@ -12,6 +12,14 @@ export default function Tariff(props) {
     } = props;
 
 
+
+    let cleverCardName = classnames(
+        {
+            'bigCard': props.tariff == 'red',
+            'card': props.tariff == 'black' || 'blue' || 'green',
+        }
+    )
+
     let cleverName = classnames(
         'name',
         {
@@ -34,7 +42,7 @@ export default function Tariff(props) {
 
 
     return (
-        <div className='card' >
+        <div className={cleverCardName} >
             <div className={cleverName}>{name}</div>
             <div className={cleverPrice}>{price}<span className='rubInMonth'>руб/мес</span></div>
             <div className='speed'>{speed}</div>
